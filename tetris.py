@@ -18,7 +18,7 @@ def lancement_jeu(monjeu):
     BoutonQuitter.pack(padx = 5, pady = 5)
 
 def main():
-    monjeu = tk()
+    monjeu = tk()     #probleme : TypeError: 'module' object is not callable
     monjeu.title('Tetris de Thomas et Maxime')
     monjeu.geometry()
     lancement_jeu(monjeu)
