@@ -4,24 +4,22 @@ Created on Mon Mar 23 11:34:18 2015
 
 @author: thorodriguez
 """
+from tkinter import *
 
-import tkinter as tk
+# Création de la fenêtre principale (main window)
+Monjeu = Tk()
+Monjeu.title('Tetris de Thomas et Maxime')
+Monjeu.geometry('1500x1000')
+photo = PhotoImage(file="fondtetris.gif")
+print(photo)
 
-
-def lancement_jeu(monjeu):
-
-    BoutonLancer = tk.Button(monjeu, text ='Lancer le jeu', \
-    command = lancement_jeu)
-    BoutonLancer.pack(padx = 5, pady = 5)
-
-    BoutonQuitter = tk.Button(monjeu, text ='Quitter', command = monjeu.destroy)
-    BoutonQuitter.pack(padx = 5, pady = 5)
-
-def main():
-    monjeu = tk()     #probleme : TypeError: 'module' object is not callable
-    monjeu.title('Tetris de Thomas et Maxime')
-    monjeu.geometry()
-    lancement_jeu(monjeu)
-
-
-main()
+def grille():
+    case = 0
+    ligne = []
+    colonne = []
+    for i in range (10):
+        ligne.append(case)
+        for i in range (14):
+            colonne.append(case), end="\n"
+    print(colonne)
+grille()
