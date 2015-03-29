@@ -4,22 +4,28 @@ Created on Mon Mar 23 11:34:18 2015
 
 @author: thorodriguez
 """
-from tkinter import *
 
-# Création de la fenêtre principale (main window)
-Monjeu = Tk()
-Monjeu.title('Tetris de Thomas et Maxime')
-Monjeu.geometry('1500x1000')
-photo = PhotoImage(file="fondtetris.gif")
-print(photo)
+import pygame
 
-def grille():
-    case = 0
-    ligne = []
-    colonne = []
-    for i in range (10):
-        ligne.append(case)
-        for i in range (14):
-            colonne.append(case), end="\n"
-    print(colonne)
-grille()
+pygame.init()
+
+surf_hauteur = 1208
+surf_largeur = 986
+
+surface = pygame.display.set_mode((surf_hauteur, surf_largeur)) #taille fenetre
+pygame.display.set_caption("Jeu de Thomas et Maxime") #nom fenetre
+
+
+def fenetre_principale():
+    
+    fond = pygame.image.load("fondtetris.jpg").convert
+
+    game_over = False
+    while (game_over == False) : 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                game_over = True
+    pygame.quit()
+    quit()
+
+fenetre_principale()
